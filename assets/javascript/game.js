@@ -3,7 +3,8 @@
   $("#number-to-guess").text(targetNumber);
 
   var counter = 0;
-
+  var wins = 0;
+  var loses = 0;
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
   // We begin by expanding our array to include four options.
@@ -57,11 +58,13 @@
     $("#current-total").text("New Score: " + counter);
 
     if (counter === targetNumber) {
-      alert("You win!");
+        wins++;
+        $("#wins-counter").text("Wins: " + wins);
     }
 
     else if (counter >= targetNumber) {
-      alert("You lose!!");
+        loses++;
+        $("#loses-counter").text("Loses: " + loses);
     }
 
   });
