@@ -5,6 +5,7 @@
   var counter = 0;
   var wins = 0;
   var loses = 0;
+  var resetGame = false;
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
   // We begin by expanding our array to include four options.
@@ -20,7 +21,7 @@
   
   // Next we create a for loop to create crystals for every numberOption.
   for (var i = 0; i < 4; i++) {
-
+    
     // For each iteration, we will create an imageCrystal
     var imageCrystal = $("<img>");
 
@@ -52,19 +53,32 @@
     // We then add the crystalValue to the user's "counter" which is a global variable.
     // Every click, from every crystal adds to the global counter.
     counter += crystalValue;
-
+    
     // All of the same game win-lose logic applies. So the rest remains unchanged.
     //alert("New score: " + counter);
     $("#current-total").text("New Score: " + counter);
 
+    //if (resetGame) {
+      //  $("#current-total").text("New Score: " );
+        //targetNumber = Math.floor(Math.random() * 101) + 19;
+    //}
+    
+    
+
     if (counter === targetNumber) {
         wins++;
         $("#wins-counter").text("Wins: " + wins);
+        resetGame = true;
+        counter = 0;
+        
     }
 
     else if (counter >= targetNumber) {
         loses++;
         $("#loses-counter").text("Loses: " + loses);
+        resetGame = true;
+        counter = 0;
+        
     }
 
   });
