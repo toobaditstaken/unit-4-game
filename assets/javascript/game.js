@@ -8,7 +8,7 @@ var targetNumber = 53;
 
   // We begin by expanding our array to include four options.
   
-  
+  var crystalImages = ["assets/images/image1.jpg", "assets/images/image2.png", "assets/images/image3.jpg", "assets/images/image4.png"]
   
   function giveNumber() {
     var numberOptions = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
@@ -16,12 +16,7 @@ var targetNumber = 53;
     return numberOptions[randomNumber];
   }
 
-  function giveImage() {
-    var crystalImages = ["assets/images/image1.jpg", "assets/images/image2.png", "assets/images/image3.jpg", "assets/images/image4.png"]
-    var randomNumber = Math.floor(Math.random() * 4);
-    return crystalImages[randomNumber];
-  }
-
+  
   
   // Next we create a for loop to create crystals for every numberOption.
   for (var i = 0; i < 4; i++) {
@@ -34,7 +29,7 @@ var targetNumber = 53;
     imageCrystal.addClass("crystal-image");
 
     // Each imageCrystal will be given a src link to the crystal image
-    imageCrystal.attr("src", giveImage());
+    imageCrystal.attr("src",crystalImages[i]);
 
     // Each imageCrystal will be given a data attribute called data-crystalValue.
     // This data attribute will be set equal to the array value.
