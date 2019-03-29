@@ -7,10 +7,18 @@ var targetNumber = 53;
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
   // We begin by expanding our array to include four options.
-  var numberOptions = [10, 5, 3, 7];
+  
+  var crystalImages = ["assets/images/image1.jpg", "assets/images/image2.png", "assets/images/image3.jpg", "assets/images/image4.png"]
+  
+  function giveNumber() {
+    var numberOptions = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    var randomNumber = Math.floor(Math.random() * 12);
+    return numberOptions[randomNumber];
+  }
 
+  
   // Next we create a for loop to create crystals for every numberOption.
-  for (var i = 0; i < numberOptions.length; i++) {
+  for (var i = 0; i < 4; i++) {
 
     // For each iteration, we will create an imageCrystal
     var imageCrystal = $("<img>");
@@ -24,7 +32,7 @@ var targetNumber = 53;
 
     // Each imageCrystal will be given a data attribute called data-crystalValue.
     // This data attribute will be set equal to the array value.
-    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+    imageCrystal.attr("data-crystalvalue", giveNumber());
 
     // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
     $("#crystals").append(imageCrystal);
