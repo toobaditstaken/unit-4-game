@@ -1,4 +1,4 @@
-var targetNumber = 53;
+    var targetNumber = Math.floor(Math.random() * 101) + 19;
 
   $("#number-to-guess").text(targetNumber);
 
@@ -16,7 +16,6 @@ var targetNumber = 53;
     return numberOptions[randomNumber];
   }
 
-  
   
   // Next we create a for loop to create crystals for every numberOption.
   for (var i = 0; i < 4; i++) {
@@ -54,7 +53,8 @@ var targetNumber = 53;
     counter += crystalValue;
 
     // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
+    //alert("New score: " + counter);
+    $("#current-total").text("New Score: " + counter);
 
     if (counter === targetNumber) {
       alert("You win!");
