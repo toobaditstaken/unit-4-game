@@ -24,27 +24,24 @@
 
   function reset() {
     targetNumber = Math.floor(Math.random() * 101) + 19;
-    $("#number-to-guess").text(targetNumber);
-    counter = 0;
-    //imageCrystal.attr("data-crystalvalue", giveNumber());
-    $("#crystals").empty();
-    for (var i = 0; i < crystalImages.length; i++) {
-    
-        var imageCrystal = $("<img>");
 
-        imageCrystal.addClass("crystal-image");
+    $("#number-to-guess").text(targetNumber);
+
+    counter = 0;
     
-        
+    $("#crystals").empty();
+
+    for (var i = 0; i < crystalImages.length; i++) {
+        var imageCrystal = $("<img>");
+        imageCrystal.addClass("crystal-image");    
         imageCrystal.attr("src",crystalImages[i]);
         imageCrystal.attr("name", "idontcare");
-        
-        
         imageCrystal.attr("data-crystalvalue", giveNumber());
         imageCrystal.attr("value", giveNumber());
-        
         $("#crystals").append(imageCrystal);
-        
       }
+
+      $("#current-total").text("New Score: " + counter);
 
   }
   
