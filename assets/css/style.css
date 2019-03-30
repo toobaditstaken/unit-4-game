@@ -2,3 +2,27 @@
     width: 200px;
     height: 200px;
   }
+
+  #crystals{
+      align-content: center;
+  }
+
+  h1 {
+    margin-left: 40px;
+      margin-top: 40px;
+      font-size: 200%;
+      
+  }
+
+  h2 {
+    margin-top: 20px;
+      margin-left: 20px;
+      font-size: 200%;
+  }
+
+  p {
+      margin-left: 40px;
+    margin-top: 40px;
+      font-size: 150%;
+      
+  }

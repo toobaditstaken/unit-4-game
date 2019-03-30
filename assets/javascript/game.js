@@ -27,6 +27,8 @@
 
     $("#number-to-guess").text(targetNumber);
 
+    onLoad();
+
     counter = 0;
     
     $("#crystals").empty();
@@ -41,9 +43,35 @@
         $("#crystals").append(imageCrystal);
       }
 
-      $("#current-total").text("New Score: " + counter);
-
+      $("#current-total").text("Total Score: " + counter);
+      
   }
+
+  function onLoad() {
+    $("#crystals")
+    onDisplay("p");
+};
+
+  function onDisplay(z) {
+    wonLoss(z);
+};
+
+  function wonLoss(y) {
+    var x = document.getElementById("won-text");
+    var x2 = document.getElementById("lose-text");
+    if(y === "w") {
+        x.style.visibility = "visible";
+        x2.style.visibility = "hidden";
+    }
+    else if (y === "l") {
+        x.style.visibility = "hidden";
+        x2.style.visibility = "visible";
+    }
+    else {
+        x.style.visibility = "hidden";
+        x2.style.visibility = "hidden";
+    }
+}
   
   
   for (var i = 0; i < crystalImages.length; i++) {
@@ -85,7 +113,7 @@
     
     // All of the same game win-lose logic applies. So the rest remains unchanged.
     //alert("New score: " + counter);
-    $("#current-total").text("New Score: " + counter);
+    $("#current-total").text("Total Score: " + counter);
 
     //if (resetGame) {
       //  $("#current-total").text("New Score: " );
@@ -99,15 +127,16 @@
         $("#wins-counter").text("Wins: " + wins);
         reset();
         counter = 0;
-        
+        onDisplay("w");
     }
-
     else if (counter >= targetNumber) {
         loses++;
         $("#loses-counter").text("Loses: " + loses);
         reset();
         counter = 0;
-        
+        onDisplay("l")
     }
-
+    else {
+        onDisplay("a")
+    }
   });

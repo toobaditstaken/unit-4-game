@@ -7,14 +7,17 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
   
 </head>
-<body>
+<body onload = "onLoad()">
 
     <div id="crystals"></div>
-
-    <h1>Number to Guess: <span id="number-to-guess"></span></h1>
-    <p id = "current-total">New Score: </p>
+    <h2>Click on the gems which have their own hidden value, and add them up until you reach the goal.</h2>
+    <h2>Be sure to get the exact amount, if you go over you lose!</h2>
+    <h1>Number to reach: <span id="number-to-guess"></span></h1>
+    <p id = "current-total">Total Score: </p>
     <p id = "wins-counter">Wins: 0</p>
     <p id = "loses-counter">Loses: 0</p>
+    <p id = "won-text">You win! Press the gems to play again.</p>
+    <p id = "lose-text">You lost! Press the gems to play again.</p>
   
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
