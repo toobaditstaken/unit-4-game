@@ -1,16 +1,20 @@
-    var targetNumber = Math.floor(Math.random() * 101) + 19;
+    
+  
+  var targetNumber = Math.floor(Math.random() * 101) + 19;
 
   $("#number-to-guess").text(targetNumber);
 
   var counter = 0;
   var wins = 0;
   var loses = 0;
-  var resetGame = false;
+
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
   // We begin by expanding our array to include four options.
   
   var crystalImages = ["assets/images/image1.jpg", "assets/images/image2.png", "assets/images/image3.jpg", "assets/images/image4.png"]
+  
+
   
   function giveNumber() {
     var numberOptions = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
@@ -18,9 +22,17 @@
     return numberOptions[randomNumber];
   }
 
+  function reset() {
+    targetNumber = Math.floor(Math.random() * 101) + 19;
+    $("#number-to-guess").text(targetNumber);
+    counter = 0;
+    //imageCrystal.attr("data-crystalvalue", giveNumber());
+    
+    
+  }
   
-  // Next we create a for loop to create crystals for every numberOption.
-  for (var i = 0; i < 4; i++) {
+  function imageGeneration() {
+  for (var i = 0; i < crystalImages.length; i++) {
     
     // For each iteration, we will create an imageCrystal
     var imageCrystal = $("<img>");
@@ -34,12 +46,14 @@
 
     // Each imageCrystal will be given a data attribute called data-crystalValue.
     // This data attribute will be set equal to the array value.
+    
     imageCrystal.attr("data-crystalvalue", giveNumber());
-
     // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
     $("#crystals").append(imageCrystal);
+    
   }
-
+}
+    imageGeneration();
   // This time, our click event applies to every single crystal on the page. Not just one.
   $(".crystal-image").on("click", function() {
 
@@ -68,7 +82,7 @@
     if (counter === targetNumber) {
         wins++;
         $("#wins-counter").text("Wins: " + wins);
-        resetGame = true;
+        reset();
         counter = 0;
         
     }
@@ -76,7 +90,7 @@
     else if (counter >= targetNumber) {
         loses++;
         $("#loses-counter").text("Loses: " + loses);
-        resetGame = true;
+        reset();
         counter = 0;
         
     }
