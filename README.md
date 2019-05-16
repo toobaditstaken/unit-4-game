@@ -2,7 +2,7 @@
 
 # What is unit-4-game
 
-The unit-4-game is a gem counting game were 4 clickable gems are displayed withrandom numbers, you must add up these gems to the displayed goal number. Every new ittiration of the game changes the numbers of the gems and the goal number.
+The unit-4-game is a gem counting game were 4 clickable gems are displayed with random numbers, you must add up these gems to the displayed goal number. Every new ittiration of the game changes the numbers of the gems and the goal number.
 
 # How to play
 
